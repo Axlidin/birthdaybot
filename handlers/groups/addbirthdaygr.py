@@ -303,7 +303,7 @@ def format_productsgr(products):
     if not products:
         return "Tug'ilgan kunlar topilmadi."
 
-    lines = [f"<b>Sizning Guruhdagi tug'ilgan kunlar ro'yxatingiz:</b>\n"]
+    lines = [f"<b>Sizning Guruhingizdagi tug'ilgan kunlar ro'yxati:</b>\n"]
     for p in products:
 
         lines.append(f"<b>🔰 Ism:</b>  <i>{p[1].upper()}</i>\n"
