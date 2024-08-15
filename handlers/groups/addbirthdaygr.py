@@ -39,12 +39,15 @@ async def add_birthday_gr(message: types.Message):
 
 @dp.message_handler(text="🛑 To'xtatish", state=Birthday_gr)
 async def cancel_see_gr(message: types.Message, state: FSMContext):
-    await message.answer("Siz Tug'ilgan kun qo'shishni bekor qildingiz")#, reply_markup=AdminMain_menu)
+    await message.answer("Siz Tug'ilgan kun qo'shishni bekor qildingiz",
+                         reply_markup=ReplyKeyboardRemove())
+    #, reply_markup=AdminMain_menu)
     await state.reset_state()
 
 @dp.callback_query_handler(text="stop", state=Birthday_gr)
 async def cancel_saw_inline_gr(call: CallbackQuery, state: FSMContext):
-    await call.message.answer("Siz Tug'ilgan kun qo'shishni bekor qildingiz")  # , reply_markup=AdminMain_menu)
+    await call.message.edit_reply_markup()# , reply_markup=AdminMain_menu)
+    await call.message.answer("Siz Tug'ilgan kun qo'shishni bekor qildingiz")
     await state.reset_state()
 
 @dp.message_handler(state=Birthday_gr.FullName)

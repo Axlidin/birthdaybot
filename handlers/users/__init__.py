@@ -6,4 +6,3 @@ from . import infoBirthday
 from . import sozlamalar
 from . import support
 from . import start
-from . import gr_auot_info
